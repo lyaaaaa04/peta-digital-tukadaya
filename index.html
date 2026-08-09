@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Peta Digital Desa Tukadaya, Kecamatan Melaya, Kabupaten Jembrana, Bali">
+    <title>Peta Digital Desa Tukadaya</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div>
+                <h1>Peta Digital Desa Tukadaya</h1>
+                <p>Kecamatan Melaya, Kabupaten Jembrana, Bali</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <span class="badge">MEDIA INFORMASI DIGITAL</span>
+            <h2>Selamat Datang di Peta Digital Desa Tukadaya</h2>
+            <p>
+                Halaman ini menyediakan akses digital terhadap peta Desa Tukadaya. Gunakan tombol di bawah untuk memperbesar, memperkecil, menggeser, atau melihat peta dalam mode layar penuh.
+            </p>
+        </section>
+
+        <section class="map-card">
+            <div class="map-toolbar">
+                <div class="toolbar-title">Peta Desa Tukadaya</div>
+
+                <div class="toolbar-buttons">
+                    <button id="zoomOut" title="Perkecil">−</button>
+                    <button id="resetZoom" title="Kembalikan ukuran">100%</button>
+                    <button id="zoomIn" title="Perbesar">+</button>
+                    <button id="fullscreenBtn" title="Layar penuh">⛶</button>
+                </div>
+            </div>
+
+            <div class="map-viewer" id="mapViewer">
+                <div class="map-stage" id="mapStage">
+                    <img
+                        id="mapImage"
+                        src="assets/draft.jpeg"
+                        alt="Peta Desa Tukadaya, Kecamatan Melaya, Kabupaten Jembrana, Bali"
+                        draggable="false"
+                    >
+                </div>
+
+                <div class="map-help">
+                    Scroll untuk zoom • Tarik peta untuk menggeser
+                </div>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <h3>Dokumen Peta</h3>
+            <p>Gunakan tombol berikut untuk mengakses atau mengunduh peta.</p>
+
+        <div class="download-buttons">
+            <a 
+                class="button primary" 
+                href="./assets/draft.jpeg" 
+                download="Peta-Desa-Tukadaya.jpeg">
+                Download Gambar
+            </a>
+            <a 
+                class="button secondary" 
+                href="./assets/draft.jpeg" 
+                target="_blank">
+                Lihat Gambar
+            </a>
+        </div>
+
+            <!-- <p class="note">
+                Catatan: agar tombol PDF berfungsi, simpan file PDF dengan nama
+                <strong>peta-tukadaya.pdf</strong> di dalam folder <strong>assets</strong>.
+            </p> -->
+
+        </section>
+
+        <section class="info-section">
+            <h3>Informasi Peta</h3>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span>📍</span>
+                    <div>
+                        <strong>Wilayah</strong>
+                        <p>Desa Tukadaya</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span>🏛️</span>
+                    <div>
+                        <strong>Kecamatan</strong>
+                        <p>Melaya</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span>🗺️</span>
+                    <div>
+                        <strong>Kabupaten</strong>
+                        <p>Jembrana</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span>📏</span>
+                    <div>
+                        <strong>Skala</strong>
+                        <p>1 : 36.000</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span>🌐</span>
+                    <div>
+                        <strong>Sistem Proyeksi</strong>
+                        <p>WGS 84 / Pseudo-Mercator</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span>🛰️</span>
+                    <div>
+                        <strong>Sumber Data</strong>
+                        <p>Badan Informasi Geospasial & Google Satellite</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="locations">
+            <h3>Lokasi yang Ditampilkan pada Peta</h3>
+            <p class="section-description">
+                Beberapa fasilitas dan tempat yang ditampilkan pada peta Desa Tukadaya:
+            </p>
+
+            <div class="location-grid">
+                <div class="location-card">
+                    <img src="assets/kantor.jpg" alt="Kantor">
+                    <span>Kantor Perbekel Desa Tukadaya</span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/kopdes.png" alt="Kopdes">
+                    <span>Koperasi Desa Merah Putih</span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/munduk ranti.jpg" alt="Munduk Ranti">
+                    <span>Bale Banjar Munduk Ranti</span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/pkj.png" alt="Pkj">
+                    <span> Bale Banjar Pangkung Jajang </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/brwt.png" alt="Brwt">
+                    <span> Bale Banjar Berawantangi Taman </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/pura puseh tkd.png" alt="Pura Puseh TKD">
+                    <span> Pura Puseh Pakraman Tukadaya </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/brw.png" alt="Brw">
+                    <span> Bale Banjar Berawantangi </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/sarikuning ta.png" alt="Sarikuning TA">
+                    <span> Bale Banjar Sarikuning Tulung Agung </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/pura puseh sarikuning.png" alt="Pura Puseh Sarikuning">
+                    <span> Pura Puseh Pakraman Sarikuning </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/pura puseh brw.png" alt="Pura Puseh Brw">
+                    <span> Pura Puseh Pakraman Berawantangi </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/sarikuning.png" alt="Sarikuning">
+                    <span> Bale Banjar Sarikuning </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/kembang sari.png" alt="Kembang Sari">
+                    <span> Bale Banjar Kembang Sari </span>
+                </div>
+                <div class="location-card">
+                    <img src="assets/sombang.png" alt="Sombang">
+                    <span> Bale Banjar Sombang </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2>Tentang Website</h2>
+            <p>
+                Website ini dikembangkan sebagai media informasi digital untuk melengkapi
+                peta Desa Tukadaya dalam kegiatan KKN-PPM XXXIII Universitas Udayana 2026.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 KKN-PPM XXXIII Universitas Udayana</p>
+        <p>Desa Tukadaya, Kecamatan Melaya, Kabupaten Jembrana, Bali</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #176b4d;
+    --primary-dark: #0f4d38;
+    --light: #f4f8f6;
+    --text: #1f2937;
+    --muted: #667085;
+    --border: #dfe7e3;
+    --white: #ffffff;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.header {
+    background: linear-gradient(135deg, #176b4d, #23835f);
+    color: white;
+    padding: 24px 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-icon {
+    font-size: 38px;
+}
+
+.header h1 {
+    font-size: clamp(22px, 4vw, 32px);
+    line-height: 1.2;
+}
+
+.header p {
+    margin-top: 4px;
+    opacity: 0.9;
+}
+
+.container {
+    width: min(1100px, 94%);
+    margin: 30px auto 50px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background: #dcefe7;
+    color: var(--primary-dark);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.intro h2,
+.info-section h2,
+.download-section h2,
+.locations h2,
+.about h2 {
+    margin-bottom: 8px;
+}
+
+.intro p {
+    max-width: 760px;
+    margin: auto;
+    color: var(--muted);
+}
+
+.map-card,
+.download-section,
+.info-section,
+.locations,
+.about {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(20, 50, 40, 0.06);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.map-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.toolbar-title {
+    font-weight: bold;
+}
+
+.toolbar-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.toolbar-buttons button {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    min-width: 40px;
+    height: 38px;
+    padding: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.toolbar-buttons button:hover {
+    background: #eef5f2;
+}
+
+.map-viewer {
+    height: min(72vh, 760px);
+    min-height: 420px;
+    background: #e8ecea;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+    touch-action: none;
+}
+
+.map-viewer.dragging {
+    cursor: grabbing;
+}
+
+.map-stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.map-stage img {
+    display: block;
+    width: min(1000px, 85vw);
+    max-width: none;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+.map-help {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.68);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.download-section,
+.info-section,
+.locations,
+.about {
+    padding: 24px;
+}
+
+.download-section > p,
+.section-description,
+.about p {
+    color: var(--muted);
+}
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 9px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.button.primary {
+    background: var(--primary);
+    color: white;
+}
+
+.button.secondary {
+    background: #edf3f0;
+    color: var(--primary-dark);
+}
+
+.button:hover {
+    opacity: 0.88;
+}
+
+.note {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.info-grid,
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.location-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-card img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.info-item {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fbfdfc;
+}
+
+.info-item > span {
+    font-size: 23px;
+}
+
+.info-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.location-card {
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fbfdfc;
+    font-size: 14px;
+}
+
+.about {
+    background: #eaf5f0;
+    border-color: #cce5d9;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 28px 20px;
+    background: #123d2f;
+    color: white;
+    font-size: 13px;
+}
+
+footer p + p {
+    opacity: 0.75;
+    margin-top: 3px;
+}
+
+@media (max-width: 700px) {
+    .header {
+        padding: 18px 15px;
+    }
+
+    .header-inner {
+        align-items: flex-start;
+    }
+
+    .brand-icon {
+        font-size: 30px;
+    }
+
+    .container {
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    .map-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .toolbar-buttons {
+        justify-content: center;
+    }
+
+    .map-viewer {
+        height: 60vh;
+        min-height: 350px;
+    }
+
+    .map-stage img {
+        width: 850px;
+    }
+
+    .info-grid,
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        text-align: center;
+    }
+
+    .map-help {
+        font-size: 10px;
+        max-width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
