@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Peta Digital Desa Tukadaya, Kecamatan Melaya, Kabupaten Jembrana, Bali">
+    <meta
+        name="description"
+        content="Peta Digital Desa Tukadaya, Kecamatan Melaya, Kabupaten Jembrana, Bali"
+    >
 
     <title>Peta Digital Desa Tukadaya</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Google Font Poppins -->
@@ -18,11 +21,13 @@
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 </head>
 
 
 <body>
+
 
     <!-- =====================================================
          HEADER
@@ -34,7 +39,9 @@
 
             <div>
 
-                <h1>Peta Digital Desa Tukadaya</h1>
+                <h1>
+                    Peta Digital Desa Tukadaya
+                </h1>
 
                 <p>
                     Kecamatan Melaya, Kabupaten Jembrana, Bali
@@ -88,54 +95,61 @@
         <section class="map-card">
 
 
-            <!-- TOOLBAR -->
+            <!-- =================================================
+                 TOOLBAR PETA
+            ================================================== -->
 
             <div class="map-toolbar">
 
+
+                <!-- JUDUL PETA -->
+
                 <div
                     class="toolbar-title"
-                    id="mapTitle">
-
-                    Peta 1
-
+                    id="mapTitle"
+                >
+                    Peta 1 — Fasilitas Umum Desa Tukadaya
                 </div>
 
+
+
+                <!-- TOMBOL KONTROL -->
 
                 <div class="toolbar-buttons">
 
                     <button
                         id="zoomOut"
-                        title="Perkecil">
-
+                        title="Perkecil"
+                        type="button"
+                    >
                         −
-
                     </button>
 
 
                     <button
                         id="resetZoom"
-                        title="Kembalikan ukuran">
-
+                        title="Kembalikan ukuran"
+                        type="button"
+                    >
                         100%
-
                     </button>
 
 
                     <button
                         id="zoomIn"
-                        title="Perbesar">
-
+                        title="Perbesar"
+                        type="button"
+                    >
                         +
-
                     </button>
 
 
                     <button
                         id="fullscreenBtn"
-                        title="Layar penuh">
-
+                        title="Layar penuh"
+                        type="button"
+                    >
                         ⛶
-
                     </button>
 
                 </div>
@@ -145,31 +159,51 @@
 
 
             <!-- =================================================
-                 PILIHAN 3 PETA
+                 PILIHAN 2 PETA
             ================================================== -->
 
             <div class="map-selector">
 
 
-                <!-- PETA 1 -->
+                <!-- =================================================
+                     PETA 1
+                ================================================== -->
 
                 <button
                     class="map-tab active"
-                    data-map="0">
+                    data-map="0"
+                    type="button"
+                >
 
-                    <strong>Peta 1</strong>
+                    <strong>
+                        Peta 1
+                    </strong>
+
+                    <span>
+                        Fasilitas Umum
+                    </span>
 
                 </button>
 
 
 
-                <!-- PETA 3 -->
+                <!-- =================================================
+                     PETA 2
+                ================================================== -->
 
                 <button
                     class="map-tab"
-                    data-map="2">
+                    data-map="1"
+                    type="button"
+                >
 
-                    <strong>Peta 2</strong>
+                    <strong>
+                        Peta 2
+                    </strong>
+
+                    <span>
+                        Peta Desa
+                    </span>
 
                 </button>
 
@@ -184,21 +218,21 @@
 
             <div
                 class="map-viewer"
-                id="mapViewer">
+                id="mapViewer"
+            >
 
 
                 <div
                     class="map-stage"
-                    id="mapStage">
-
+                    id="mapStage"
+                >
 
                     <img
                         id="mapImage"
                         src="assets/peta.jpg"
-                        alt="Peta 1 Fasilitas Umum Desa Tukadaya"
+                        alt="Peta Fasilitas Umum Desa Tukadaya"
                         draggable="false"
                     >
-
 
                 </div>
 
@@ -245,10 +279,9 @@
                 <a
                     class="button primary"
                     href="assets/peta desa.pdf"
-                    download="Peta-Desa-Tukadaya.pdf">
-
+                    download="Peta-Desa-Tukadaya.pdf"
+                >
                     Download Peta
-
                 </a>
 
 
@@ -259,10 +292,9 @@
                     class="button secondary"
                     href="assets/peta desa.pdf"
                     target="_blank"
-                    rel="noopener noreferrer">
-
+                    rel="noopener noreferrer"
+                >
                     Lihat Peta
-
                 </a>
 
 
@@ -459,11 +491,14 @@
             <div class="location-grid">
 
 
+                <!-- KANTOR -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/kantor.jpg"
-                        alt="Kantor Perbekel Desa Tukadaya">
+                        alt="Kantor Perbekel Desa Tukadaya"
+                    >
 
                     <span>
                         Kantor Perbekel Desa Tukadaya
@@ -473,11 +508,14 @@
 
 
 
+                <!-- KOPDES -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/kopdes.png"
-                        alt="Koperasi Desa Merah Putih">
+                        alt="Koperasi Desa Merah Putih"
+                    >
 
                     <span>
                         Koperasi Desa Merah Putih
@@ -487,11 +525,14 @@
 
 
 
+                <!-- MUNDUK RANTI -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/munduk ranti.jpg"
-                        alt="Bale Banjar Munduk Ranti">
+                        alt="Bale Banjar Munduk Ranti"
+                    >
 
                     <span>
                         Bale Banjar Munduk Ranti
@@ -501,11 +542,14 @@
 
 
 
+                <!-- PANGKUNG JAJANG -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/pkj.png"
-                        alt="Bale Banjar Pangkung Jajang">
+                        alt="Bale Banjar Pangkung Jajang"
+                    >
 
                     <span>
                         Bale Banjar Pangkung Jajang
@@ -515,11 +559,14 @@
 
 
 
+                <!-- BERAWANTANGI TAMAN -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/brwt.png"
-                        alt="Bale Banjar Berawantangi Taman">
+                        alt="Bale Banjar Berawantangi Taman"
+                    >
 
                     <span>
                         Bale Banjar Berawantangi Taman
@@ -529,11 +576,14 @@
 
 
 
+                <!-- PURA PUSEH TUKADAYA -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/pura puseh tkd.png"
-                        alt="Pura Puseh Pakraman Tukadaya">
+                        alt="Pura Puseh Pakraman Tukadaya"
+                    >
 
                     <span>
                         Pura Puseh Pakraman Tukadaya
@@ -543,11 +593,14 @@
 
 
 
+                <!-- BERAWANTANGI -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/brw.png"
-                        alt="Bale Banjar Berawantangi">
+                        alt="Bale Banjar Berawantangi"
+                    >
 
                     <span>
                         Bale Banjar Berawantangi
@@ -557,11 +610,14 @@
 
 
 
+                <!-- SARIKUNING TULUNG AGUNG -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/sarikuning ta.png"
-                        alt="Bale Banjar Sarikuning Tulung Agung">
+                        alt="Bale Banjar Sarikuning Tulung Agung"
+                    >
 
                     <span>
                         Bale Banjar Sarikuning Tulung Agung
@@ -571,11 +627,14 @@
 
 
 
+                <!-- PURA PUSEH TAMAN SARI -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/pura puseh sarikuning.png"
-                        alt="Pura Puseh Pakraman Taman Sari">
+                        alt="Pura Puseh Pakraman Taman Sari"
+                    >
 
                     <span>
                         Pura Puseh Pakraman Taman Sari
@@ -585,11 +644,14 @@
 
 
 
+                <!-- PURA PUSEH BERAWANTANGI -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/pura puseh brw.png"
-                        alt="Pura Puseh Pakraman Berawantangi">
+                        alt="Pura Puseh Pakraman Berawantangi"
+                    >
 
                     <span>
                         Pura Puseh Pakraman Berawantangi
@@ -599,11 +661,14 @@
 
 
 
+                <!-- SARIKUNING -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/sarikuning.png"
-                        alt="Bale Banjar Sarikuning">
+                        alt="Bale Banjar Sarikuning"
+                    >
 
                     <span>
                         Bale Banjar Sarikuning
@@ -613,11 +678,14 @@
 
 
 
+                <!-- KEMBANG SARI -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/kembang sari.png"
-                        alt="Bale Banjar Kembang Sari">
+                        alt="Bale Banjar Kembang Sari"
+                    >
 
                     <span>
                         Bale Banjar Kembang Sari
@@ -627,11 +695,14 @@
 
 
 
+                <!-- SOMBANG -->
+
                 <div class="location-card">
 
                     <img
                         src="assets/sombang.png"
-                        alt="Bale Banjar Sombang">
+                        alt="Bale Banjar Sombang"
+                    >
 
                     <span>
                         Bale Banjar Sombang
@@ -665,7 +736,7 @@
                 digital untuk melengkapi peta Desa Tukadaya dalam
                 kegiatan KKN-PPM XXXIII Universitas Udayana 2026.
 
-                Website menyediakan tampilan interaktif tiga peta
+                Website menyediakan tampilan interaktif dua peta
                 Desa Tukadaya serta dokumen peta dalam format PDF
                 yang dapat diakses dan diunduh oleh masyarakat.
 
@@ -698,9 +769,12 @@
 
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
     <script src="script.js"></script>
+
 
 </body>
 
