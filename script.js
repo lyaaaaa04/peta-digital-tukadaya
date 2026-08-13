@@ -20,13 +20,7 @@ const maps = [
     },
 
     {
-        title: "Peta 2 — Penggunaan Lahan Desa Tukadaya",
-        image: "assets/peta 2.jpg",
-        alt: "Peta Penggunaan Lahan Desa Tukadaya"
-    },
-
-    {
-        title: "Peta 3 — Peta Desa Tukadaya",
+        title: "Peta 2 — Peta Desa Tukadaya",
         image: "assets/peta 3.jpg",
         alt: "Peta Desa Tukadaya"
     }
