@@ -9,7 +9,7 @@ const mapTitle = document.getElementById("mapTitle");
 
 
 // =====================================================
-// DAFTAR 3 PETA
+// DAFTAR 2 PETA
 // =====================================================
 
 const maps = [
@@ -28,7 +28,7 @@ const maps = [
 
 
 // =====================================================
-// ZOOM
+// VARIABEL ZOOM
 // =====================================================
 
 let scale = 1;
@@ -40,18 +40,20 @@ const MAX_SCALE = 4;
 
 
 // =====================================================
-// UPDATE MAP
+// UPDATE POSISI PETA
 // =====================================================
 
 function updateMap() {
 
     stage.style.transform =
-        `translate(-50%, -50%) 
-         translate(${translateX}px, ${translateY}px) 
-         scale(${scale})`;
+        `translate(-50%, -50%) translate(${translateX}px, ${translateY}px) scale(${scale})`;
 
-    document.getElementById("resetZoom").textContent =
-        `${Math.round(scale * 100)}%`;
+    const resetButton = document.getElementById("resetZoom");
+
+    if (resetButton) {
+        resetButton.textContent =
+            `${Math.round(scale * 100)}%`;
+    }
 }
 
 
@@ -86,7 +88,7 @@ function zoomOut() {
 
 
 // =====================================================
-// RESET ZOOM
+// RESET ZOOM DAN POSISI
 // =====================================================
 
 function resetMap() {
@@ -104,104 +106,209 @@ function resetMap() {
 // TOMBOL ZOOM
 // =====================================================
 
-document
-    .getElementById("zoomIn")
-    .addEventListener("click", zoomIn);
+const zoomInButton =
+    document.getElementById("zoomIn");
+
+const zoomOutButton =
+    document.getElementById("zoomOut");
+
+const resetZoomButton =
+    document.getElementById("resetZoom");
 
 
-document
-    .getElementById("zoomOut")
-    .addEventListener("click", zoomOut);
+if (zoomInButton) {
+
+    zoomInButton.addEventListener(
+        "click",
+        zoomIn
+    );
+
+}
 
 
-document
-    .getElementById("resetZoom")
-    .addEventListener("click", resetMap);
+if (zoomOutButton) {
+
+    zoomOutButton.addEventListener(
+        "click",
+        zoomOut
+    );
+
+}
+
+
+if (resetZoomButton) {
+
+    resetZoomButton.addEventListener(
+        "click",
+        resetMap
+    );
+
+}
 
 
 // =====================================================
 // FULLSCREEN
 // =====================================================
 
-document
-    .getElementById("fullscreenBtn")
-    .addEventListener("click", () => {
+const fullscreenButton =
+    document.getElementById("fullscreenBtn");
 
-        if (!document.fullscreenElement) {
 
-            viewer.requestFullscreen?.();
+if (fullscreenButton) {
 
-        } else {
+    fullscreenButton.addEventListener(
+        "click",
+        () => {
 
-            document.exitFullscreen?.();
+            if (!document.fullscreenElement) {
+
+                if (viewer.requestFullscreen) {
+
+                    viewer.requestFullscreen();
+
+                }
+
+            } else {
+
+                if (document.exitFullscreen) {
+
+                    document.exitFullscreen();
+
+                }
+
+            }
 
         }
+    );
 
-    });
+}
 
 
 // =====================================================
-// PILIHAN 3 PETA
+// PILIHAN 2 PETA
 // =====================================================
 
-const mapTabs = document.querySelectorAll(".map-tab");
+const mapTabs =
+    document.querySelectorAll(".map-tab");
 
 
-mapTabs.forEach((tab) => {
+mapTabs.forEach(
+    (tab) => {
 
-    tab.addEventListener("click", () => {
+        tab.addEventListener(
+            "click",
+            () => {
 
-        // Ambil nomor peta
-        const mapIndex = Number(
-            tab.dataset.map
+                // -----------------------------------------
+                // Ambil nomor peta
+                // -----------------------------------------
+
+                const mapIndex =
+                    parseInt(
+                        tab.getAttribute("data-map")
+                    );
+
+
+                console.log(
+                    "Peta dipilih:",
+                    mapIndex
+                );
+
+
+                // -----------------------------------------
+                // Pastikan nomor peta valid
+                // -----------------------------------------
+
+                if (
+                    isNaN(mapIndex) ||
+                    !maps[mapIndex]
+                ) {
+
+                    console.error(
+                        "Data peta tidak ditemukan:",
+                        mapIndex
+                    );
+
+                    return;
+
+                }
+
+
+                const selectedMap =
+                    maps[mapIndex];
+
+
+                // -----------------------------------------
+                // Ganti gambar
+                // -----------------------------------------
+
+                mapImage.src =
+                    selectedMap.image;
+
+
+                mapImage.alt =
+                    selectedMap.alt;
+
+
+                // -----------------------------------------
+                // Ganti judul
+                // -----------------------------------------
+
+                mapTitle.textContent =
+                    selectedMap.title;
+
+
+                // -----------------------------------------
+                // Ganti tombol aktif
+                // -----------------------------------------
+
+                mapTabs.forEach(
+                    (item) => {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                tab.classList.add(
+                    "active"
+                );
+
+
+                // -----------------------------------------
+                // Reset zoom dan posisi
+                // -----------------------------------------
+
+                resetMap();
+
+            }
         );
 
-        // Ambil data peta
-        const selectedMap = maps[mapIndex];
-
-        // Jika data tidak ditemukan
-        if (!selectedMap) return;
+    }
+);
 
 
-        // =============================================
-        // GANTI GAMBAR
-        // =============================================
+// =====================================================
+// CEK GAMBAR
+// =====================================================
 
-        mapImage.src = selectedMap.image;
+mapImage.addEventListener(
+    "error",
+    () => {
 
-        mapImage.alt = selectedMap.alt;
+        console.error(
+            "Gambar peta tidak ditemukan:",
+            mapImage.src
+        );
 
+        mapImage.alt =
+            "Gambar peta tidak dapat ditemukan";
 
-        // =============================================
-        // GANTI JUDUL
-        // =============================================
-
-        mapTitle.textContent =
-            selectedMap.title;
-
-
-        // =============================================
-        // UBAH TAB AKTIF
-        // =============================================
-
-        mapTabs.forEach((item) => {
-
-            item.classList.remove("active");
-
-        });
-
-        tab.classList.add("active");
-
-
-        // =============================================
-        // RESET POSISI & ZOOM
-        // =============================================
-
-        resetMap();
-
-    });
-
-});
+    }
+);
 
 
 // =====================================================
@@ -217,17 +324,37 @@ let startTranslateX = 0;
 let startTranslateY = 0;
 
 
+// -----------------------------------------
+// MULAI DRAG
+// -----------------------------------------
+
 viewer.addEventListener(
     "pointerdown",
     (event) => {
 
+        // Jangan mengganggu tombol
+        if (
+            event.target.closest(".map-tab") ||
+            event.target.closest("button")
+        ) {
+
+            return;
+
+        }
+
+
         dragging = true;
 
-        viewer.classList.add("dragging");
+        viewer.classList.add(
+            "dragging"
+        );
 
 
-        startX = event.clientX;
-        startY = event.clientY;
+        startX =
+            event.clientX;
+
+        startY =
+            event.clientY;
 
 
         startTranslateX =
@@ -237,29 +364,51 @@ viewer.addEventListener(
             translateY;
 
 
-        viewer.setPointerCapture(
-            event.pointerId
-        );
+        try {
+
+            viewer.setPointerCapture(
+                event.pointerId
+            );
+
+        } catch (error) {
+
+            // Tidak melakukan apa-apa
+
+        }
 
     }
 );
 
 
+// -----------------------------------------
+// SAAT DRAG
+// -----------------------------------------
+
 viewer.addEventListener(
     "pointermove",
     (event) => {
 
-        if (!dragging) return;
+        if (!dragging) {
+
+            return;
+
+        }
 
 
         translateX =
             startTranslateX +
-            (event.clientX - startX);
+            (
+                event.clientX -
+                startX
+            );
 
 
         translateY =
             startTranslateY +
-            (event.clientY - startY);
+            (
+                event.clientY -
+                startY
+            );
 
 
         updateMap();
@@ -267,6 +416,10 @@ viewer.addEventListener(
     }
 );
 
+
+// -----------------------------------------
+// SELESAI DRAG
+// -----------------------------------------
 
 viewer.addEventListener(
     "pointerup",
@@ -295,6 +448,10 @@ viewer.addEventListener(
 );
 
 
+// -----------------------------------------
+// BATAL DRAG
+// -----------------------------------------
+
 viewer.addEventListener(
     "pointercancel",
     () => {
@@ -320,7 +477,9 @@ viewer.addEventListener(
         event.preventDefault();
 
 
-        if (event.deltaY < 0) {
+        if (
+            event.deltaY < 0
+        ) {
 
             zoomIn();
 
